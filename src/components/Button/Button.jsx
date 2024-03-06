@@ -2,11 +2,14 @@ import React from "react";
 import "./Button.css";
 
 function Button(props) {
+  const { isOutline, icons, text, ...rest } = props;
   return (
-    <button className={props.isOutline ? "outline-btn" : "primary-btn"}>
-      {props.icons}
-      {props.text}
-      
+    <button
+      {...rest}
+      className={isOutline ? "outline-btn" : "primary-btn"}
+    >
+      {icons}
+      {text}
     </button>
   );
 }
